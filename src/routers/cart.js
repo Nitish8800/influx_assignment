@@ -26,9 +26,12 @@ router.post("/cart", async (req, res) => {
     const cartData = await Cart.create(allData);
 
     return res.status(201).send(cartData);
+
   } catch (err) {
+
     return res.status(501).send({ Message: err.message });
-  }
+  
+}
 });
 
 // get cart Data
